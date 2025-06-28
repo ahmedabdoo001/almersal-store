@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المرسال - الرئيسية</title>
+  <style>
+    body { margin: 0; font-family: Tahoma, sans-serif; background: #f5f5f5; }
+    header { background: #232f3e; color: white; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { font-size: 24px; font-weight: bold; }
+    nav a { color: white; margin-left: 20px; text-decoration: none; }
+    .search-bar { flex-grow: 1; margin: 0 20px; }
+    .search-bar input { width: 100%; padding: 6px; }
+
+    .layout { display: flex; }
+    .sidebar { width: 200px; background: #fff; padding: 10px; border-left: 1px solid #ccc; }
+    .sidebar h3 { font-size: 18px; }
+    .content { flex-grow: 1; padding: 20px; }
+
+    .product-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      width: 180px;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    footer { background: #232f3e; color: white; text-align: center; padding: 10px; margin-top: 20px; }
+
+    /* نموذج الشراء المنبثق */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      right: 0; left: 0; top: 0; bottom: 0;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+      text-align: right;
+    }
+
+    .modal-content input, .modal-content textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 5px;
+    }
+
+    .modal-content button {
+      padding: 8px 12px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">📚 المرسال</div>
+    <div class="search-bar"><input type="text" placeholder="ابحث عن منتج..."></div>
+    <nav>
+      <a href="#">المنتجات</a>
+      <a href="#">تواصل معنا</a>
+      <a href="#">عرض السعر</a>
+      <a href="#">كن وكيلاً</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h3>التصنيفات</h3>
+      <ul>
+        <li>ورق تصوير</li>
+        <li>أقلام وأدوات</li>
+        <li>دفاتر</li>
+        <li>ملخصات</li>
+        <li>أظرف وملحقات</li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <h2>منتجاتنا</h2>
+      <div class="product-card">
+        <img src="1000075319.jpg" alt="ورق تصوير">
+        <h4>ورق تصوير A4 80 جم أزهار</h4>
+        <button onclick="openModal('ورق تصوير A4 80 جم أزهار')">شراء</button>
+      </div>
+      <div class="product-card">
+        <img src="1000075320.jpg" alt="ملخصات">
+        <h4>ملخصات دراسية</h4>
+        <button onclick="openModal('ملخصات دراسية')">شراء</button>
+      </div>
+      <div class="product-card">
+        <img src="1000075321.jpg" alt="أقلام">
+        <h4>مجموعة أقلام</h4>
+        <button onclick="openModal('مجموعة أقلام')">شراء</button>
+      </div>
+      <div class="product-card">
+        <img src="1000075322.jpg" alt="دفاتر">
+        <h4>دفاتر دراسية</h4>
+        <button onclick="openModal('دفاتر دراسية')">شراء</button>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal" id="buyModal">
+    <div class="modal-content">
+      <h3>نموذج الطلب</h3>
+      <form onsubmit="submitOrder(event)">
+        <label>الاسم:</label><input type="text" required>
+        <label>الهاتف:</label><input type="tel" required>
+        <label>العنوان:</label><textarea required></textarea>
+        <label>المنتج:</label><input type="text" id="productField" readonly>
+        <button type="submit">تأكيد الطلب</button>
+        <button type="button" onclick="closeModal()">إلغاء</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    جميع الحقوق محفوظة &copy; شركة المرسال 2025
+  </footer>
+
+  <script>
+    function openModal(productName) {
+      document.getElementById('buyModal').style.display = 'flex';
+      document.getElementById('productField').value = productName;
+    }
+
+    function closeModal() {
+      document.getElementById('buyModal').style.display = 'none';
+    }
+
+    function submitOrder(event) {
+      event.preventDefault();
+      
+    const name = event.target[0].value;
+    const phone = event.target[1].value;
+    const address = event.target[2].value;
+    const product = event.target[3].value;
+    const message = `طلب جديد من الموقع:%0A- الاسم: ${name}%0A- الهاتف: ${phone}%0A- العنوان: ${address}%0A- المنتج: ${product}`;
+    const whatsappURL = `https://wa.me/201556333937?text=${message}`;
+    
+    const email = "almersal.office.supplies@gmail.com";
+    const subject = "طلب شراء جديد من موقع المرسال";
+    const body = `طلب جديد من الموقع:\n- الاسم: ${name}\n- الهاتف: ${phone}\n- العنوان: ${address}\n- المنتج: ${product}`;
+    window.open(`mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, '_blank');
+    window.location.href = whatsappURL;
+    
+    
+      closeModal();
+    }
+  </script>
+</body>
+</html>
