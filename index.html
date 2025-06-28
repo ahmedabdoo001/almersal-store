@@ -5,115 +5,58 @@
   <title>المرسال للتوريدات</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: white;
-      padding: 10px 20px;
-      border-bottom: 1px solid #ddd;
-    }
-    header img.logo {
-      height: 60px;
-    }
-    nav {
-      background-color: #2e3a59;
-      display: flex;
-      justify-content: center;
-      padding: 10px 0;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    main {
-      text-align: center;
-      padding: 50px 20px;
-      background-color: #3e4e6b;
-      color: white;
-    }
-    .main-button {
-      background-color: #00b894;
-      color: white;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 6px;
-      font-size: 16px;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .product-icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 30px;
-      margin-top: 30px;
-      padding: 20px;
-      background: white;
-    }
-    .product-icons img {
-      width: 100px;
-      height: auto;
-      background: white;
-      border-radius: 12px;
-      padding: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #2e3a59;
-      color: white;
-    }
+    body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f5f7fa; }
+    header { background: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
+    .contact { font-size: 14px; }
+    .logo-bar { display: flex; align-items: center; justify-content: center; gap: 20px; padding: 15px; background: #fff; flex-wrap: wrap; }
+    .logo-bar img { max-height: 100px; border-radius: 10px; }
+    nav { background: #2e3a59; color: white; display: flex; justify-content: center; padding: 10px 0; flex-wrap: wrap; }
+    nav a { color: white; margin: 0 15px; text-decoration: none; }
+    nav a.active { border-bottom: 2px solid #00cec9; }
+    main { text-align: center; padding: 40px 20px; }
+    main h1 { font-size: 32px; color: #2e3a59; }
+    .cta-button { padding: 12px 25px; background: #00b894; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; text-decoration: none; }
+    .product-images { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
+    .product-images img { max-width: 200px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
   </style>
 </head>
 <body>
 
 <header>
-  <div>
-    <span>📞 01021458991</span> | 
-    <span>📧 almersal.officesupplies@gmail.com</span>
-  </div>
-  <div>📍 القاهرة</div>
+  <div class="contact">📞 01021458991 | ✉️ almersal.officesupplies@gmail.com</div>
+  <div>القاهرة</div>
 </header>
 
+<div class="logo-bar">
+  <img src="logo.png" alt="شعار المرسال">
+  <img src="1000075319.jpg" alt="ورق تصوير ازهار">
+  <img src="1000075320.jpg" alt="ورق تصوير اومنيا">
+  <img src="1000075321.jpg" alt="أدوات مكتبية متنوعة">
+  <img src="1000075322.jpg" alt="أدوات مكتبية عصرية">
+  <img src="A_digital_photograph_features_printed_educational_.png" alt="جميع الكتب الدراسية">
+</div>
+
 <nav>
-  <a href="index.html">الرئيسية</a>
-  <a href="products.html">المنتجات</a>
+  <a href="index.html" class="active">الرئيسية</a>
+  <a href="products.html">منتجات</a>
   <a href="quote.html">عرض الأسعار</a>
-  <a href="agent.html">كن وكيلاً</a>
   <a href="about.html">من نحن</a>
   <a href="contact.html">تواصل معنا</a>
+  <a href="agent.html">كن وكيلاً</a>
 </nav>
 
 <main>
-  <img src="logo.png" alt="لوجو المرسال" class="logo">
-  <h1>مرحبًا بك في المرسال للتوريدات</h1>
-  <a class="main-button" href="products.html">عرض المنتجات</a>
+  <h1>مرحباً بكم في المرسال للتوريدات</h1>
+  <a href="products.html" class="cta-button">عرض المنتجات</a>
+
+  <div class="product-images">
+    <img src="1000075319.jpg" alt="ازهر">
+    <img src="1000075320.jpg" alt="اومنيا">
+    <img src="1000075321.jpg" alt="مجموعة أدوات مكتبية">
+    <img src="1000075322.jpg" alt="مستلزمات مكتبية حديثة">
+    <img src="A_digital_photograph_features_printed_educational_.png" alt="كتب دراسية متوفرة">
+  </div>
 </main>
-
-<div class="product-icons">
-  <img src="1000075299.png" alt="ورق تصوير">
-  <img src="1000075299.png" alt="أقلام">
-  <img src="1000075299.png" alt="سلوتيب">
-  <img src="1000075299.png" alt="ختم">
-</div>
-
-<footer>
-  جميع الحقوق محفوظة © 2025 المرسال للتوريدات
-</footer>
 
 </body>
 </html>
