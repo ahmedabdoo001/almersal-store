@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المرسال للتوريدات</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="شعار المرسال" class="logo">
+    <h1>المرسال للتوريدات</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>منتجاتنا</h2>
+      <div id="product-list" class="products"></div>
+    </section>
+
+    <section class="form-section">
+      <h2>إضافة منتج جديد</h2>
+      <input type="text" id="name" placeholder="اسم المنتج">
+      <input type="text" id="price" placeholder="السعر">
+      <textarea id="desc" placeholder="وصف المنتج"></textarea>
+      <button onclick="addProduct()">إضافة المنتج</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>جميع الحقوق محفوظة &copy; المرسال للتوريدات</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
