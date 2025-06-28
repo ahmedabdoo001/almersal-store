@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تجربة منتج - المرسال</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="products.html">المنتجات</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>تجربة منتج: ورق تصوير A4 80 جرام ازهار</h2>
+    <div class="product-card">
+      <img src="1000075319.jpg" alt="ورق تصوير A4">
+      <h3>ورق تصوير A4 80 جرام ازهار</h3>
+      <button onclick="showForm()">شراء</button>
+    </div>
+
+    <div id="buyForm" style="display:none; margin-top:20px;">
+      <form onsubmit="sendForm(event)">
+        <label>الاسم:</label><input type="text" required><br>
+        <label>رقم الهاتف:</label><input type="tel" required><br>
+        <label>العنوان:</label><textarea required></textarea><br>
+        <button type="submit">تأكيد الطلب</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>جميع الحقوق محفوظة &copy; المرسال 2025</p>
+  </footer>
+
+  <script>
+    function showForm() {
+      document.getElementById("buyForm").style.display = "block";
+    }
+
+    function sendForm(event) {
+      event.preventDefault();
+      alert("✅ تم استلام الطلب بنجاح! سيتم التواصل معك قريبًا.");
+      event.target.reset();
+    }
+  </script>
+
+  <style>
+    .product-card {
+      border: 1px solid #ccc;
+      padding: 16px;
+      max-width: 300px;
+      text-align: center;
+    }
+    .product-card img {
+      max-width: 100%;
+    }
+    form input, form textarea {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</body>
+</html>

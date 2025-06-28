@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تأكيد الطلب - المرسال</title>
+  <style>
+    body { font-family: 'Segoe UI', sans-serif; margin: 0; background: #f2f2f2; }
+    .container {
+      max-width: 700px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #111;
+      margin-bottom: 30px;
+    }
+    input, textarea {
+      width: 100%; padding: 12px; margin: 10px 0;
+      border: 1px solid #ccc; border-radius: 4px;
+    }
+    button {
+      background-color: #febd69;
+      color: #111;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+    .summary {
+      background: #f7f7f7;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+    .summary table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .summary th, .summary td {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+    .summary .total {
+      font-weight: bold;
+      color: #b12704;
+      margin-top: 10px;
+      text-align: center;
+    }
+    .whatsapp-user {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .whatsapp-user a {
+      background: #25d366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>تأكيد الطلب</h1>
+
+  <form id="orderForm" onsubmit="return handleSubmit()">
+    <input type="text" id="name" placeholder="الاسم الكامل" required>
+    <input type="text" id="phone" placeholder="رقم الهاتف" required>
+    <textarea id="address" placeholder="العنوان الكامل" required></textarea>
+    <textarea id="notes" placeholder="ملاحظات إضافية (اختياري)"></textarea>
+    <button type="submit">تأكيد الطلب</button>
+  </form>
+
+  <div class="summary">
+    <h3>ملخص الطلب:</h3>
+    <table id="cartTable">
+      <thead>
+        <tr><th>المنتج</th><th>الكمية</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <p class="total" id="cartTotal">عدد المنتجات: 0</p>
+  </div>
+
+  <div class="whatsapp-user" id="userWhatsApp" style="display:none;">
+    <p>⬇️ يمكنك أيضًا تأكيد طلبك على واتساب:</p>
+    <a href="#" id="whatsappLink" target="_blank">إرسال تأكيد الطلب لي على واتساب</a>
+  </div>
+</div>
+
+<script>
+  const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+
+  function renderCart() {
+    let table = document.querySelector("#cartTable tbody");
+    let count = 0;
+    let details = '';
+    table.innerHTML = '';
+    cart.forEach(p => {
+      table.innerHTML += `<tr><td>${p.name}</td><td>1</td></tr>`;
+      count++;
+      details += `- ${p.name}\n`;
+    });
+    document.getElementById("cartTotal").textContent = "عدد المنتجات: " + count;
+    return details;
+  }
+
+  function handleSubmit() {
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const notes = document.getElementById('notes').value.trim();
+
+    const details = renderCart();
+    const message = `طلب جديد من موقع المرسال:\nالاسم: ${name}\nرقم الهاتف: ${phone}\nالعنوان: ${address}\n${details}ملاحظات: ${notes}`;
+    const encodedMsg = encodeURIComponent(message);
+
+    // إرسال إلى الشركة
+    const companyWhatsApp = "https://wa.me/201556333937?text=" + encodedMsg;
+    window.open(companyWhatsApp, '_blank');
+
+    // إعداد رابط للعميل
+    const userMsg = `مرحباً ${name}!\nشكراً لك على الطلب من المرسال. تم استلام طلبك وسنقوم بالتواصل معك.`;
+    const userWhatsApp = "https://wa.me/2" + phone.replace(/^0/, "") + "?text=" + encodeURIComponent(userMsg);
+    document.getElementById("whatsappLink").href = userWhatsApp;
+    document.getElementById("userWhatsApp").style.display = "block";
+
+    return false;
+  }
+
+  renderCart();
+</script>
+
+</body>
+</html>
