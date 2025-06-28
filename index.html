@@ -2,43 +2,46 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>المرسال للتوريدات</title>
+  <title>المرسال للتوريدات - متجر إلكتروني</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background: #f5f7fa; }
-    header { background: white; padding: 10px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; }
-    .contact { font-size: 14px; }
-    .logo-bar { display: flex; align-items: center; justify-content: center; gap: 20px; padding: 15px; background: #fff; flex-wrap: wrap; }
-    .logo-bar img { max-height: 100px; border-radius: 10px; }
-    nav { background: #2e3a59; color: white; display: flex; justify-content: center; padding: 10px 0; flex-wrap: wrap; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; }
-    nav a.active { border-bottom: 2px solid #00cec9; }
-    main { text-align: center; padding: 40px 20px; }
-    main h1 { font-size: 32px; color: #2e3a59; }
-    .cta-button { padding: 12px 25px; background: #00b894; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; text-decoration: none; }
-    .product-images { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
-    .product-images img { max-width: 200px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    body { margin: 0; font-family: 'Arial', sans-serif; background: #f0f2f5; }
+    header { background: #232f3e; color: white; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; }
+    header .logo { font-size: 24px; font-weight: bold; }
+    header input[type="text"] { width: 40%; padding: 8px; border-radius: 5px; border: none; }
+    header .contact { font-size: 14px; }
+
+    nav { background: #37475a; padding: 10px 20px; display: flex; gap: 20px; flex-wrap: wrap; }
+    nav a { color: white; text-decoration: none; font-size: 14px; }
+
+    main { padding: 30px 20px; text-align: center; }
+    main h1 { color: #232f3e; }
+
+    .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px; }
+    .product-card {
+      background: white; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center;
+      display: flex; flex-direction: column; justify-content: space-between;
+    }
+    .product-card img { max-width: 100%; max-height: 160px; object-fit: contain; margin-bottom: 10px; }
+    .product-card h3 { font-size: 16px; margin: 5px 0; color: #232f3e; }
+    .product-card p { color: #00b894; font-weight: bold; }
+    .product-card button {
+      background: #febd69; border: none; padding: 10px; border-radius: 6px;
+      cursor: pointer; font-weight: bold; color: #111;
+    }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="contact">📞 01021458991 | ✉️ almersal.officesupplies@gmail.com</div>
-  <div>القاهرة</div>
+  <div class="logo">📦 المرسال</div>
+  <input type="text" placeholder="ابحث عن منتج...">
+  <div class="contact">01021458991 | almersal.office.supplies@gmail.com</div>
 </header>
 
-<div class="logo-bar">
-  <img src="logo.png" alt="شعار المرسال">
-  <img src="1000075319.jpg" alt="ورق تصوير ازهار">
-  <img src="1000075320.jpg" alt="ورق تصوير اومنيا">
-  <img src="1000075321.jpg" alt="أدوات مكتبية متنوعة">
-  <img src="1000075322.jpg" alt="أدوات مكتبية عصرية">
-  <img src="A_digital_photograph_features_printed_educational_.png" alt="جميع الكتب الدراسية">
-</div>
-
 <nav>
-  <a href="index.html" class="active">الرئيسية</a>
-  <a href="products.html">منتجات</a>
+  <a href="index.html">الرئيسية</a>
+  <a href="products.html">كل المنتجات</a>
   <a href="quote.html">عرض الأسعار</a>
   <a href="about.html">من نحن</a>
   <a href="contact.html">تواصل معنا</a>
@@ -46,15 +49,32 @@
 </nav>
 
 <main>
-  <h1>مرحباً بكم في المرسال للتوريدات</h1>
-  <a href="products.html" class="cta-button">عرض المنتجات</a>
-
-  <div class="product-images">
-    <img src="1000075319.jpg" alt="ازهر">
-    <img src="1000075320.jpg" alt="اومنيا">
-    <img src="1000075321.jpg" alt="مجموعة أدوات مكتبية">
-    <img src="1000075322.jpg" alt="مستلزمات مكتبية حديثة">
-    <img src="A_digital_photograph_features_printed_educational_.png" alt="كتب دراسية متوفرة">
+  <h1>أشهر المنتجات</h1>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="1000075319.jpg" alt="ورق تصوير ازهار">
+      <h3>ورق A4 ازهار</h3>
+      <p>132 جنيه</p>
+      <button onclick="location.href='checkout.html'">شراء</button>
+    </div>
+    <div class="product-card">
+      <img src="1000075320.jpg" alt="ورق تصوير اومنيا">
+      <h3>ورق A4 اومنيا</h3>
+      <p>132 جنيه</p>
+      <button onclick="location.href='checkout.html'">شراء</button>
+    </div>
+    <div class="product-card">
+      <img src="1000075321.jpg" alt="أدوات مكتبية">
+      <h3>أدوات مكتبية كاملة</h3>
+      <p>متعدد</p>
+      <button onclick="location.href='products.html'">عرض</button>
+    </div>
+    <div class="product-card">
+      <img src="A_digital_photograph_features_printed_educational_.png" alt="كتب دراسية">
+      <h3>كتب دراسية</h3>
+      <p>اسأل عن السعر</p>
+      <button onclick="location.href='contact.html'">تواصل</button>
+    </div>
   </div>
 </main>
 
