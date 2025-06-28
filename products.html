@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>منتجات المرسال</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .product-card {
+      background-color: white;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .product-card img {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    .product-name {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .product-price {
+      color: #007B33;
+      font-size: 16px;
+    }
+    .cart {
+      background: #f1f1f1;
+      padding: 15px;
+      margin: 20px;
+      border-radius: 10px;
+    }
+    .cart h3 {
+      margin-top: 0;
+    }
+    button {
+      background-color: #007B33;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <img src="logo.png" alt="لوجو المرسال" class="logo">
+  <h1>منتجات المرسال</h1>
+</header>
+<main>
+  <div class="product-grid" id="productList">
+
+    <div class="product-card">
+      <div style="font-size:48px;">📄</div>
+      <div class="product-name">ورق تصوير A4 80 جرام ازهار</div>
+      <div class="product-price">السعر: 132.0 جنيه</div>
+      <button onclick="addToCart('ورق تصوير A4 80 جرام ازهار', 132.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📄</div>
+      <div class="product-name">ورق تصوير A4 80 جرام اومنيه</div>
+      <div class="product-price">السعر: 132.0 جنيه</div>
+      <button onclick="addToCart('ورق تصوير A4 80 جرام اومنيه', 132.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📄</div>
+      <div class="product-name">ورق تصوير A4 70 جرام ازهار</div>
+      <div class="product-price">السعر: 117.0 جنيه</div>
+      <button onclick="addToCart('ورق تصوير A4 70 جرام ازهار', 117.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📄</div>
+      <div class="product-name">ورق تصوير A4 70 جرام مرام</div>
+      <div class="product-price">السعر: 117.0 جنيه</div>
+      <button onclick="addToCart('ورق تصوير A4 70 جرام مرام', 117.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🖊️</div>
+      <div class="product-name">قلم جاف روتو</div>
+      <div class="product-price">السعر: 4.5 جنيه</div>
+      <button onclick="addToCart('قلم جاف روتو', 4.5)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🖊️</div>
+      <div class="product-name">قلم جاف اسبيشال</div>
+      <div class="product-price">السعر: 9.0 جنيه</div>
+      <button onclick="addToCart('قلم جاف اسبيشال', 9.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🖊️</div>
+      <div class="product-name">قلم جاف عادي برافو</div>
+      <div class="product-price">السعر: 3.75 جنيه</div>
+      <button onclick="addToCart('قلم جاف عادي برافو', 3.75)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🖊️</div>
+      <div class="product-name">قلم رصاص k-max</div>
+      <div class="product-price">السعر: 3.5 جنيه</div>
+      <button onclick="addToCart('قلم رصاص k-max', 3.5)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🔖</div>
+      <div class="product-name">استيكر اسعار</div>
+      <div class="product-price">السعر: 15.0 جنيه</div>
+      <button onclick="addToCart('استيكر اسعار', 15.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🧷</div>
+      <div class="product-name">سلوتيب صغير 25m</div>
+      <div class="product-price">السعر: 3.5 جنيه</div>
+      <button onclick="addToCart('سلوتيب صغير 25m', 3.5)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🧷</div>
+      <div class="product-name">سلوتيب كبير</div>
+      <div class="product-price">السعر: 28.5 جنيه</div>
+      <button onclick="addToCart('سلوتيب كبير', 28.5)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">✉️</div>
+      <div class="product-name">ظرف ابيض نقدية لاصق ذاتي</div>
+      <div class="product-price">السعر: 1.0 جنيه</div>
+      <button onclick="addToCart('ظرف ابيض نقدية لاصق ذاتي', 1.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">✉️</div>
+      <div class="product-name">ظرف ابيض نقدية عادي</div>
+      <div class="product-price">السعر: 0.7 جنيه</div>
+      <button onclick="addToCart('ظرف ابيض نقدية عادي', 0.7)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">✉️</div>
+      <div class="product-name">ظرف ابيض A4 لاصق ذاتي</div>
+      <div class="product-price">السعر: 3.2 جنيه</div>
+      <button onclick="addToCart('ظرف ابيض A4 لاصق ذاتي', 3.2)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🖊️</div>
+      <div class="product-name">قلم ماركر</div>
+      <div class="product-price">السعر: 8.0 جنيه</div>
+      <button onclick="addToCart('قلم ماركر', 8.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📏</div>
+      <div class="product-name">مسطرة حديد 30سم</div>
+      <div class="product-price">السعر: 10.0 جنيه</div>
+      <button onclick="addToCart('مسطرة حديد 30سم', 10.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📎</div>
+      <div class="product-name">علبة دبابيس دباسة جانجارو 24/6</div>
+      <div class="product-price">السعر: 14.0 جنيه</div>
+      <button onclick="addToCart('علبة دبابيس دباسة جانجارو 24/6', 14.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📄</div>
+      <div class="product-name">ورق صبانه</div>
+      <div class="product-price">السعر: 11.0 جنيه</div>
+      <button onclick="addToCart('ورق صبانه', 11.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🔏</div>
+      <div class="product-name">حبر ختامة ازرق</div>
+      <div class="product-price">السعر: 14.0 جنيه</div>
+      <button onclick="addToCart('حبر ختامة ازرق', 14.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🪛</div>
+      <div class="product-name">خرامة</div>
+      <div class="product-price">السعر: 120.0 جنيه</div>
+      <button onclick="addToCart('خرامة', 120.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🔏</div>
+      <div class="product-name">ختامة</div>
+      <div class="product-price">السعر: 25.0 جنيه</div>
+      <button onclick="addToCart('ختامة', 25.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📦</div>
+      <div class="product-name">حافظة حرف U</div>
+      <div class="product-price">السعر: 1.3 جنيه</div>
+      <button onclick="addToCart('حافظة حرف U', 1.3)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📎</div>
+      <div class="product-name">دباسة كانجارو B9</div>
+      <div class="product-price">السعر: 170.0 جنيه</div>
+      <button onclick="addToCart('دباسة كانجارو B9', 170.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📄</div>
+      <div class="product-name">دفتر حرف ز 100 ورقة</div>
+      <div class="product-price">السعر: 94.0 جنيه</div>
+      <button onclick="addToCart('دفتر حرف ز 100 ورقة', 94.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📓</div>
+      <div class="product-name">دفتر جلسات</div>
+      <div class="product-price">السعر: 110.0 جنيه</div>
+      <button onclick="addToCart('دفتر جلسات', 110.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">✂️</div>
+      <div class="product-name">مقص</div>
+      <div class="product-price">السعر: 60.0 جنيه</div>
+      <button onclick="addToCart('مقص', 60.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🧮</div>
+      <div class="product-name">آلة حاسبة رقم 12</div>
+      <div class="product-price">السعر: 210.0 جنيه</div>
+      <button onclick="addToCart('آلة حاسبة رقم 12', 210.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">📁</div>
+      <div class="product-name">اكلسير بالماكينة</div>
+      <div class="product-price">السعر: 50.0 جنيه</div>
+      <button onclick="addToCart('اكلسير بالماكينة', 50.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🧼</div>
+      <div class="product-name">استيك نقدية مصري</div>
+      <div class="product-price">السعر: 8.0 جنيه</div>
+      <button onclick="addToCart('استيك نقدية مصري', 8.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🔧</div>
+      <div class="product-name">خلاعة دبابيس HD</div>
+      <div class="product-price">السعر: 30.0 جنيه</div>
+      <button onclick="addToCart('خلاعة دبابيس HD', 30.0)">أضف إلى السلة</button>
+    </div>
+    
+    <div class="product-card">
+      <div style="font-size:48px;">🔧</div>
+      <div class="product-name">خلاعة دبابيس كانجارو</div>
+      <div class="product-price">السعر: 35.0 جنيه</div>
+      <button onclick="addToCart('خلاعة دبابيس كانجارو', 35.0)">أضف إلى السلة</button>
+    </div>
+    
+  </div>
+  <div class="cart" id="cart">
+    <h3>🛒 عربة التسوق</h3>
+    <ul id="cartItems"></ul>
+    <p id="total">الإجمالي: 0 جنيه</p>
+    <a href="checkout.html" onclick="saveCartBeforeCheckout()" class="checkout-button">شراء</a>
+  </div>
+  <div style="text-align:center;margin-top:20px;">
+    <a href="index.html" style="color:#007B33;font-weight:bold;">⬅ الرجوع للصفحة الرئيسية</a>
+  </div>
+</main>
+<footer>
+  <p>© 2025 المرسال للتوريدات</p>
+</footer>
+<script>
+  const cart = [];
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCart();
+  }
+  function updateCart() {
+    const cartItems = document.getElementById('cartItems');
+    const totalEl = document.getElementById('total');
+    cartItems.innerHTML = '';
+    let total = 0;
+    cart.forEach((item, index) => {
+      total += item.price;
+      cartItems.innerHTML += `<li>${item.name} - ${item.price} جنيه</li>`;
+    });
+    totalEl.textContent = 'الإجمالي: ' + total + ' جنيه';
+  }
+  function checkout() {
+    if (cart.length === 0) {
+      alert('السلة فارغة!');
+      return;
+    }
+    let summary = cart.map(item => `- ${item.name}: ${item.price} جنيه`).join('\n');
+    alert('شكراً لطلبك!\n' + summary + '\nسيتم التواصل معك لإتمام الطلب.');
+    cart.length = 0;
+    updateCart();
+  }
+
+function saveCartBeforeCheckout() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+</script>
+
+</body>
+</html>
