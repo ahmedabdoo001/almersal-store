@@ -1,35 +1,119 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>المرسال للتوريدات</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>المرسال للتوريدات</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: white;
+      padding: 10px 20px;
+      border-bottom: 1px solid #ddd;
+    }
+    header img.logo {
+      height: 60px;
+    }
+    nav {
+      background-color: #2e3a59;
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      text-align: center;
+      padding: 50px 20px;
+      background-color: #3e4e6b;
+      color: white;
+    }
+    .main-button {
+      background-color: #00b894;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .product-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 30px;
+      padding: 20px;
+      background: white;
+    }
+    .product-icons img {
+      width: 100px;
+      height: auto;
+      background: white;
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #2e3a59;
+      color: white;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="لوجو المرسال" class="logo">
-        <h1>المرسال للتوريدات</h1>
-        <p>01021458991 | almersal.office.supplies@gmail.com | القاهرة</p>
-    </header>
 
-    <nav>
-        <a href="index.html">الرئيسية</a>
-        <a href="products.html">المنتجات</a>
-        <a href="about.html">من نحن</a>
-        <a href="contact.html">تواصل معنا</a>
-        <a href="quote.html">عرض الأسعار</a>
-        <a href="agent.html">كن وكيلاً</a>
-    </nav>
+<header>
+  <div>
+    <span>📞 01021458991</span> | 
+    <span>📧 almersal.officesupplies@gmail.com</span>
+  </div>
+  <div>📍 القاهرة</div>
+</header>
 
-    <main>
-        <h2>مرحبًا بكم في المرسال للتوريدات</h2>
-        <p>نقدم كل ما تحتاجه شركتك من أدوات مكتبية بجودة عالية وأسعار تنافسية.</p>
-    </main>
+<nav>
+  <a href="index.html">الرئيسية</a>
+  <a href="products.html">المنتجات</a>
+  <a href="quote.html">عرض الأسعار</a>
+  <a href="agent.html">كن وكيلاً</a>
+  <a href="about.html">من نحن</a>
+  <a href="contact.html">تواصل معنا</a>
+</nav>
 
-    <footer>
-        <p>© 2025 المرسال للتوريدات</p>
-    </footer>
-    <a href="https://wa.me/201021458991" class="whatsapp" target="_blank">واتساب</a>
+<main>
+  <img src="logo.png" alt="لوجو المرسال" class="logo">
+  <h1>مرحبًا بك في المرسال للتوريدات</h1>
+  <a class="main-button" href="products.html">عرض المنتجات</a>
+</main>
+
+<div class="product-icons">
+  <img src="1000075299.png" alt="ورق تصوير">
+  <img src="1000075299.png" alt="أقلام">
+  <img src="1000075299.png" alt="سلوتيب">
+  <img src="1000075299.png" alt="ختم">
+</div>
+
+<footer>
+  جميع الحقوق محفوظة © 2025 المرسال للتوريدات
+</footer>
+
 </body>
 </html>
