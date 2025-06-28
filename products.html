@@ -283,7 +283,7 @@
     <h3>🛒 عربة التسوق</h3>
     <ul id="cartItems"></ul>
     <p id="total">الإجمالي: 0 جنيه</p>
-    <button onclick="checkout()">شراء</button>
+    <a href="checkout.html" onclick="saveCartBeforeCheckout()" class="checkout-button">شراء</a>
   </div>
   <div style="text-align:center;margin-top:20px;">
     <a href="index.html" style="color:#007B33;font-weight:bold;">⬅ الرجوع للصفحة الرئيسية</a>
@@ -319,6 +319,11 @@
     cart.length = 0;
     updateCart();
   }
+
+function saveCartBeforeCheckout() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 </script>
+
 </body>
 </html>
