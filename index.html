@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>المرسال للتوريدات المكتبية</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="top-bar">
+      <img src="logo.png" alt="شعار المرسال" class="logo">
+      <input type="text" id="searchInput" placeholder="ابحث عن منتج...">
+      <div class="contact-info">
+        <a href="tel:01021458991">📞 01021458991</a>
+        <a href="mailto:almersal.office.supplies@gmail.com">✉️ تواصل عبر البريد</a>
+        <a href="products.html">🛒 المنتجات</a>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">الرئيسية</a>
+      <a href="about.html">من نحن</a>
+      <a href="products.html">المنتجات</a>
+      <a href="quote.html">عرض السعر</a>
+      <a href="agent.html">كن وكيلاً</a>
+      <a href="contact.html">تواصل معنا</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>كل ما تحتاجه من أدوات مكتبية وملخصات دراسية</h1>
+      <p>نوفر لك منتجات عالية الجودة والتوصيل لأي مكان في مصر خلال 4 أيام</p>
+      <img src="books.png" class="main-img">
+    </section>
+
+    <section class="categories">
+      <h2>بعض من منتجاتنا</h2>
+      <div class="grid">
+        <img src="1000075319.jpg" alt="منتج 1">
+        <img src="1000075320.jpg" alt="منتج 2">
+        <img src="1000075321.jpg" alt="منتج 3">
+        <img src="1000075322.jpg" alt="منتج 4">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>جميع الحقوق محفوظة &copy; 2025 - المرسال</p>
+  </footer>
+
+  <script>
+    document.getElementById("searchInput").addEventListener("input", function() {
+      const q = this.value.toLowerCase();
+      if (q && q.length > 1) window.location.href = "products.html?search=" + encodeURIComponent(q);
+    });
+  </script>
+</body>
+</html>
