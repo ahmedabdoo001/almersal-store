@@ -15,13 +15,14 @@ header {
   background-color: #002d5a;
   color: white;
   padding: 10px 0;
+  text-align: center;
 }
 .logo {
-  width: 60px;
-  vertical-align: middle;
+  width: 100px;
+  margin: 10px 0;
 }
-nav {
-  margin-top: 10px;
+.logo.large {
+  width: 150px;
 }
 nav a {
   margin: 0 10px;
@@ -30,48 +31,7 @@ nav a {
   font-weight: bold;
 }
 main {
-  padding: 20px 0;
-}
-.hero {
-  background: #ddeeff;
-  padding: 30px;
-  text-align: center;
-  border-radius: 10px;
-}
-.features {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
-}
-.feature {
-  background: white;
   padding: 20px;
-  border-radius: 8px;
-  width: 30%;
-  text-align: center;
-}
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 15px;
-}
-.product {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-}
-input, textarea {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-}
-button {
-  padding: 10px 20px;
-  background-color: #002d5a;
-  color: white;
-  border: none;
-  cursor: pointer;
 }
 footer {
   background: #ddd;
