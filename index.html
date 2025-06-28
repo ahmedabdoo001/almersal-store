@@ -8,29 +8,33 @@
 </head>
 <body>
   <header>
-    <img src="logo.png" alt="شعار المرسال" class="logo">
-    <h1>المرسال للتوريدات</h1>
+    <div class="container">
+      <img src="logo.png" class="logo" alt="شعار المرسال">
+      <nav>
+        <a href="index.html">الرئيسية</a>
+        <a href="products.html">المنتجات</a>
+        <a href="about.html">من نحن</a>
+        <a href="contact.html">تواصل معنا</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section>
-      <h2>منتجاتنا</h2>
-      <div id="product-list" class="products"></div>
+  <main class="container">
+    <section class="hero">
+      <h1>مرحبًا بكم في المرسال للتوريدات</h1>
+      <p>متخصصون في الأدوات المكتبية والختامات والتوريدات الحكومية والخاصة.</p>
     </section>
 
-    <section class="form-section">
-      <h2>إضافة منتج جديد</h2>
-      <input type="text" id="name" placeholder="اسم المنتج">
-      <input type="text" id="price" placeholder="السعر">
-      <textarea id="desc" placeholder="وصف المنتج"></textarea>
-      <button onclick="addProduct()">إضافة المنتج</button>
+    <section class="features">
+      <div class="feature">🖨 ورق تصوير بجودة عالية</div>
+      <div class="feature">✒️ أدوات مكتبية متنوعة</div>
+      <div class="feature">📦 تسليم سريع ومضمون</div>
     </section>
   </main>
 
   <footer>
-    <p>جميع الحقوق محفوظة &copy; المرسال للتوريدات</p>
+    <p>📞 01021458991 | 📧 almersal.office.supplies@gmail.com | 📍 القاهرة</p>
+    <p>© 2025 المرسال للتوريدات</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
