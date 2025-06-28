@@ -55,7 +55,7 @@
     cart.forEach(p => {
       table.innerHTML += `<tr><td>${p.name}</td><td>${p.price}</td><td>1</td><td>${p.price}</td></tr>`;
       total += p.price;
-      details += `${p.name} - ${p.price} جنيه\n`;
+      details += `- ${p.name}: ${p.price} جنيه\n`;
     });
     document.getElementById("cartTotal").textContent = "الإجمالي: " + total + " جنيه";
     document.getElementById("cartDetailsInput").value = details + "\nالإجمالي: " + total + " جنيه";
@@ -67,15 +67,17 @@
     const address = document.getElementById('address').value.trim();
     const notes = document.getElementById('notes').value.trim();
     const total = document.getElementById('cartTotal').textContent;
+    const details = document.getElementById("cartDetailsInput").value;
 
-    const products = cart.map(p => `- ${p.name}: ${p.price} جنيه`).join('%0A');
-    const message = `طلب جديد من المرسال:%0A${products}%0A${total}%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالعنوان: ${address}%0Aملاحظات: ${notes}`;
+    const message = `طلب جديد من موقع المرسال:\n${details}\nالاسم: ${name}\nالهاتف: ${phone}\nالعنوان: ${address}\nملاحظات: ${notes}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = "https://wa.me/201556333937?text=" + encodedMessage;
 
     setTimeout(() => {
-      window.open(`https://wa.me/201021458991?text=${message}`, '_blank');
-    }, 1000); // فتح الواتساب بعد ثانية من الإرسال
+      window.open(whatsappURL, '_blank');
+    }, 1200);
 
-    return true; // يُكمل الإرسال إلى البريد
+    return true;
   }
 
   renderCart();
