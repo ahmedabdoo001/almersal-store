@@ -1,126 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>منتجات المرسال</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .product-card {
-      background: #fff;
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 10px;
-      margin: 10px;
-      width: 200px;
-      display: inline-block;
-      vertical-align: top;
-      text-align: center;
-    }
-    .product-card img {
-      max-width: 100%;
-      height: 120px;
-      object-fit: cover;
-    }
-    .product-card button {
-      padding: 6px 12px;
-      background-color: #232f3e;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="logo" onclick="location.href='index.html'" style="cursor:pointer">📚 المرسال</div>
-    <nav>
-      <a href="index.html">🏠 الرئيسية</a>
-      <a href="products.html">🛒 المنتجات</a>
-      <a href="cart.html">🧺 سلة المشتريات</a>
-      <a href="contact.html">📞 تواصل معنا</a>
-    </nav>
-  </header>
-
-  <main>
-    <h2>جميع المنتجات</h2>
-    <div class="products-wrapper">
-      
-    <div class="product-card">
-      <img src="images/a4_azhark.jpg" alt="ورق تصوير A4 80 جرام أزهار">
-      <h4>ورق تصوير A4 80 جرام أزهار</h4>
-      <p><strong>132 جنيه</strong></p>
-      <button onclick="addToCart('ورق تصوير A4 80 جرام أزهار', 132)">أضف إلى العربة</button>
-    </div>
-    
-    <div class="product-card">
-      <img src="images/a4_maram.jpg" alt="ورق تصوير A4 70 جرام مرام">
-      <h4>ورق تصوير A4 70 جرام مرام</h4>
-      <p><strong>117 جنيه</strong></p>
-      <button onclick="addToCart('ورق تصوير A4 70 جرام مرام', 117)">أضف إلى العربة</button>
-    </div>
-    
-    <div class="product-card">
-      <img src="images/pen_roto.jpg" alt="قلم جاف روتو">
-      <h4>قلم جاف روتو</h4>
-      <p><strong>4.5 جنيه</strong></p>
-      <button onclick="addToCart('قلم جاف روتو', 4.5)">أضف إلى العربة</button>
-    </div>
-    
-    <div class="product-card">
-      <img src="images/pen_special.jpg" alt="قلم جاف اسبيشال">
-      <h4>قلم جاف اسبيشال</h4>
-      <p><strong>9 جنيه</strong></p>
-      <button onclick="addToCart('قلم جاف اسبيشال', 9)">أضف إلى العربة</button>
-    </div>
-    
-    <div class="product-card">
-      <img src="images/pencil_kmax.jpg" alt="قلم رصاص k-max">
-      <h4>قلم رصاص k-max</h4>
-      <p><strong>3.5 جنيه</strong></p>
-      <button onclick="addToCart('قلم رصاص k-max', 3.5)">أضف إلى العربة</button>
-    </div>
-    
-    <div class="product-card">
-      <img src="images/price_sticker.jpg" alt="استيكر أسعار">
-      <h4>استيكر أسعار</h4>
-      <p><strong>15 جنيه</strong></p>
-      <button onclick="addToCart('استيكر أسعار', 15)">أضف إلى العربة</button>
-    </div>
-    
-    <div class="product-card">
-      <img src="images/envelope_a4.jpg" alt="ظرف أبيض A4 لاصق ذاتي">
-      <h4>ظرف أبيض A4 لاصق ذاتي</h4>
-      <p><strong>3.2 جنيه</strong></p>
-      <button onclick="addToCart('ظرف أبيض A4 لاصق ذاتي', 3.2)">أضف إلى العربة</button>
-    </div>
-    
-    <div class="product-card">
-      <img src="images/staples.jpg" alt="علبة دبابيس جانجارو">
-      <h4>علبة دبابيس جانجارو</h4>
-      <p><strong>14 جنيه</strong></p>
-      <button onclick="addToCart('علبة دبابيس جانجارو', 14)">أضف إلى العربة</button>
-    </div>
-    
-    <div class="product-card">
-      <img src="images/stamp_ink.jpg" alt="حبر ختامة أزرق">
-      <h4>حبر ختامة أزرق</h4>
-      <p><strong>14 جنيه</strong></p>
-      <button onclick="addToCart('حبر ختامة أزرق', 14)">أضف إلى العربة</button>
-    </div>
-    
-    </div>
-  </main>
-
-  <footer>
-    &copy; 2025 جميع الحقوق محفوظة - شركة المرسال
-  </footer>
-
-  <script>
-    function addToCart(name, price) {
-      alert(`تمت إضافة: $خلاعة دبابيس كانجارو ($35.0 جنيه) إلى العربة.`);
-      // هنا يمكن ربطها بـ localStorage لتجميع العربة لاحقًا
-    }
-  </script>
-</body>
-</html>
