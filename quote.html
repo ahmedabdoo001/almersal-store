@@ -1,22 +1,16 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <title>طلب عرض سعر</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-</head>
+<head><meta charset="UTF-8"><title>عرض سعر</title><link rel="stylesheet" href="assets/css/style.css" /></head>
 <body>
-    <header><h1>طلب عرض سعر</h1></header>
-    <nav><a href="index.html">الرئيسية</a></nav>
-    <main>
-        <form action="mailto:almersal.office.supplies@gmail.com" method="post" enctype="text/plain">
-            <label>اسم الشركة:</label><input type="text" name="company" required>
-            <label>اسم المسؤول:</label><input type="text" name="person" required>
-            <label>رقم الهاتف:</label><input type="text" name="phone" required>
-            <label>البريد الإلكتروني:</label><input type="email" name="email" required>
-            <label>المنتجات المطلوبة:</label><textarea name="products" required></textarea>
-            <button type="submit">إرسال</button>
-        </form>
-    </main>
+<header><div class="logo">المرسال</div><nav><a href="index.html">الرئيسية</a></nav></header>
+<main>
+  <h2>طلب عرض سعر للشركات</h2>
+  <form action="mailto:almersal.office.supplies@gmail.com" method="post" enctype="text/plain">
+    <label>اسم الشركة:</label><input type="text" name="company_name" required />
+    <label>المنتجات المطلوبة:</label><textarea name="quote_details" required></textarea>
+    <label>بريد التواصل:</label><input type="email" name="company_email" />
+    <button type="submit">إرسال الطلب</button>
+  </form>
+</main>
 </body>
 </html>
